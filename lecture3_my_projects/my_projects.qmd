@@ -1,0 +1,86 @@
+---
+title: "A Few of My R Projects"
+format:
+  revealjs:
+    theme: [default]
+slide-number: true
+title-slide-attributes:
+  data-background-image: "https://images.unsplash.com/photo-1640209495329-e59b81e5708f"
+  data-background-opacity: "60%"
+  data-background-color: "black"
+execute: 
+  echo: true
+---
+
+## QualtricsTools
+
+![](images/QualtricsTools.png)
+
+<https://github.com/ctesta01/QualtricsTools>
+
+## gcRegional 
+
+![](images/gcRegional.png)
+
+<https://github.com/PPML/gc-regional>
+
+## syphilis 
+
+![](images/syphilis.png)
+
+<https://github.com/PPML/syphilis>
+
+[posterior plots](https://github.com/PPML/syphilis/blob/increase_rr_screen_ac/inst/mcmc/10-13-19/syph_plots_LA.pdf)
+
+## tabby2
+
+![](images/tabby2_github.png)
+
+## 
+
+![](images/tabby2.png)
+
+## 
+
+![](images/tabby2_paper.png)
+
+<https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-023-02785-y>
+
+## Turning to COVID
+
+![](images/working_paper_series.png)
+
+## 
+
+![](images/animated_covid.png)
+
+[link to paper](https://dash.harvard.edu/bitstream/handle/1/37366886/HCPDS-WP_19_4_testa-et-al_Visualizing-Lagged-Connection-Between-COVID-19-Cases-and-Deaths-in-US_final_07_10_with-cover.pdf?sequence=1)
+
+## 
+
+![](images/covid_osha.png)
+
+<https://link.springer.com/article/10.1007/s10654-020-00689-2>
+
+## 
+
+![](images/political_ideology.png)
+
+<https://www.thelancet.com/journals/lanam/article/PIIS2667-193X(22)00201-0/fulltext>
+
+## survey recruitment and COVID 
+
+![](images/life_and_health.png)
+
+<https://journals.lww.com/jphmp/_layouts/15/oaks.journals/downloadpdf.aspx?an=00124784-202311000-00017>
+
+## writing a training manual 
+
+![](images/phdgp.png)
+
+# conclusions {background-image="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc" background-color='black' background-opacity='80%'}
+
+I hope this gives you a good idea of some of the fantastic things you could go onto 
+do with R!
+
+

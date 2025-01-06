@@ -1,0 +1,58 @@
+---
+title: "Very Important Material: Memes"
+format:
+  revealjs:
+    theme: [default]
+slide-number: true
+title-slide-attributes:
+  data-background-image: "https://images.unsplash.com/photo-1519751138087-5bf79df62d5b"
+  data-background-opacity: "50%"
+  data-background-color: "black"
+execute: 
+  echo: true
+---
+
+## a throwback 
+
+![](graphics/memes/shocked_pikachu_any_analysis.png)
+
+## 
+
+![](graphics/memes/christians/r-on-a-car.jpg)
+
+## 
+
+![](graphics/memes/christians/run.jpg)
+
+## 
+
+![](graphics/memes/christians/purrr_map_sprinkle.png)
+
+## 
+
+![](graphics/memes/christians/amsterdam.webp)
+
+## 
+
+![](graphics/memes/christians/oreilly.png)
+
+## 
+
+![](graphics/memes/christians/smiling-because-r.jpg)
+
+## 
+
+![](graphics/memes/christians/waiting_for_r.jpg)
+
+## 
+
+![](graphics/memes/christians/who_would_win.jpg)
+
+## 
+![](graphics/memes/pipe.png)
+
+
+## 
+![](graphics/memes/meme-pooh-joins.png)
+
+# *finito* 
