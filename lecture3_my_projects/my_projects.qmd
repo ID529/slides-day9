@@ -1,5 +1,5 @@
 ---
-title: "A Few of My R Projects"
+title: "<span style='color: white'>A Few of My R Projects</span>"
 format:
   revealjs:
     theme: [default]
@@ -8,6 +8,7 @@ title-slide-attributes:
   data-background-image: "https://images.unsplash.com/photo-1640209495329-e59b81e5708f"
   data-background-opacity: "60%"
   data-background-color: "black"
+lightbox: true
 execute: 
   echo: true
 ---
@@ -77,6 +78,27 @@ execute:
 ## writing a training manual 
 
 ![](images/phdgp.png)
+
+## Epigenetic Aging and Racialized, Economic, and Environmental Injustice
+
+![](images/epigenetics.png)
+
+##  Epigenetic Aging and Racialized, Economic, and Environmental Injustice
+
+Article:
+<https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2821618>
+
+Code: 
+<https://github.com/DNAmAndAdversity>
+
+## Shelling's Model
+
+[![](images/shelling_model.png)](https://github.com/ctesta01/shelling_model)
+
+## Using Spatiotemporal GAMs for COVID-19 Inequity Analysis
+
+[![](images/covid_gradients.png)](https://github.com/ctesta01/covid.gradient.estimation)
+
 
 # conclusions {background-image="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc" background-color='black' background-opacity='80%'}
 

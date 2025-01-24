@@ -14,45 +14,41 @@ execute:
 
 ## a throwback 
 
-![](graphics/memes/shocked_pikachu_any_analysis.png)
+![](https://github.com/ID529/lectures2024/blob/master/graphics/memes/shocked_pikachu_any_analysis.png?raw=true)
 
 ## 
 
-![](graphics/memes/christians/r-on-a-car.jpg)
+![](https://github.com/ID529/lectures2024/blob/master/graphics/memes/christians/r-on-a-car.jpg?raw=true)
 
 ## 
 
-![](graphics/memes/christians/run.jpg)
+![](https://github.com/ID529/lectures2024/blob/master/graphics/memes/christians/run.jpg?raw=true)
 
 ## 
 
-![](graphics/memes/christians/purrr_map_sprinkle.png)
+![](https://github.com/ID529/lectures2024/blob/master/graphics/memes/christians/purrr_map_sprinkle.png?raw=true)
 
 ## 
 
-![](graphics/memes/christians/amsterdam.webp)
+![](https://github.com/ID529/lectures2024/blob/master/graphics/memes/christians/amsterdam.webp?raw=true)
 
 ## 
 
-![](graphics/memes/christians/oreilly.png)
+![](https://github.com/ID529/lectures2024/blob/master/graphics/memes/christians/oreilly.png?raw=true)
 
 ## 
 
-![](graphics/memes/christians/smiling-because-r.jpg)
+![](https://github.com/ID529/lectures2024/blob/master/graphics/memes/christians/smiling-because-r.jpg?raw=true)
 
 ## 
 
-![](graphics/memes/christians/waiting_for_r.jpg)
+![](https://github.com/ID529/lectures2024/blob/master/graphics/memes/christians/waiting_for_r.jpg?raw=true)
 
 ## 
 
-![](graphics/memes/christians/who_would_win.jpg)
+![](https://github.com/ID529/lectures2024/blob/master/graphics/memes/christians/who_would_win.jpg?raw=true)
 
 ## 
-![](graphics/memes/pipe.png)
-
-
-## 
-![](graphics/memes/meme-pooh-joins.png)
+![](https://ivelasq.rbind.io/blog/understanding-the-r-pipe/padme.jpg)
 
 # *finito* 

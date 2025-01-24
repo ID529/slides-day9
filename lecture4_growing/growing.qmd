@@ -5,16 +5,14 @@ format:
     theme: [default, growing.scss]
 slide-number: true
 title-slide-attributes:
-  data-background-image: "graphics/transition_slides/yen-vu.jpg"
+  data-background-image: "https://github.com/ID529/lectures2024/blob/master/graphics/transition_slides/yen-vu.jpg?raw=true"
   data-background-opacity: "60%"
   data-background-color: "black"
-revealjs-plugins:
-  - pointer
 execute: 
   echo: true
 ---
 
-## morals {background-image='graphics/transition_slides/yen-vu.jpg' background-opacity='40%' background-color='black'}
+## morals {background-image='https://github.com/ID529/lectures2024/blob/master/graphics/transition_slides/yen-vu.jpg?raw=true' background-opacity='40%' background-color='black'}
 
 :::{.fragment}
 "Whatever makes you uncomfortable is the best opportunity for growth."
@@ -29,7 +27,7 @@ execute:
 it might feel like there's *so* much to learn, but focus on committing to
 learning what you need to accomplish your goals.
 
-<img src="graphics/memes/focus-meme.jpg" alt="Yoda: focus, you must">
+<img src="https://github.com/ID529/lectures2024/blob/master/graphics/focus-meme.jpg?raw=true" alt="Yoda: focus, you must">
 
 ## do side projects 
 
@@ -37,7 +35,7 @@ whether it's "fancying your figures" or trying out features you've never tried
 before, side-projects can be fulfilling and are often sources of inspiration for
 new ideas that translate to your main projects.
 
-<img src='graphics/memes/side-projects.webp' alt="there can be a temptation to have too 
+<img src='https://github.com/ID529/lectures2024/blob/master/graphics/memes/side-projects.webp?raw=true' alt="there can be a temptation to have too 
 many side projects, or too many unfinished side-projects">
 
 ## read other people's code 
@@ -45,7 +43,7 @@ many side projects, or too many unfinished side-projects">
 reading other's code will give you the chance to see new ideas in action and
 consider the pros/cons of their programming style compared to yours.
 
-<img src="graphics/memes/read-others-code.png" alt="xkcd comic describing a situation where someone's
+<img src="https://github.com/ID529/lectures2024/blob/master/graphics/memes/read-others-code.png?raw=true" alt="xkcd comic describing a situation where someone's
 code looks like a mess">
 
 <a href="https://google.github.io/styleguide/Rguide.html">Google's R Style Guide.</a> 
@@ -66,7 +64,7 @@ The Evolution of a ggplot (Ep. 1) by Cédric Scherer</a>
 
 ## get code review
 
-<img src="graphics/memes/wtfs_per_min.png" alt="good code tends to have fewer (but not no) wtfs per minute">
+<img src="https://commadot.com/wp-content/uploads/2009/02/wtf.png" alt="good code tends to have fewer (but not no) wtfs per minute">
 
   * R for Data Science Slack: <https://www.rfordatasci.com/>
   * <https://codereview.stackexchange.com/>
