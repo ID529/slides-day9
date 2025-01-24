@@ -5,9 +5,13 @@
 <script src="final_projects_files/libs/quarto-html/popper.min.js"></script>
 <script src="final_projects_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="final_projects_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="final_projects_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="final_projects_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="final_projects_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.269">
+<link href="final_projects_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="final_projects_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="final_projects_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="final_projects_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.550">
 
   <title>Final Projects</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,11 +28,12 @@
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
       width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -92,11 +97,10 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="final_projects_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="final_projects_files/libs/revealjs/dist/theme/quarto.css">
   <link href="final_projects_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="final_projects_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="final_projects_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="final_projects_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
   <link href="final_projects_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -136,44 +140,44 @@
     font-weight: 400;
   }
 
-  .callout.callout-captioned.callout-style-simple .callout-body {
+  .callout.callout-titled.callout-style-simple .callout-body {
     margin-top: 0.2em;
   }
 
-  .callout:not(.callout-captioned) .callout-body {
+  .callout:not(.callout-titled) .callout-body {
       display: flex;
   }
 
-  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
     padding-left: 1.6em;
   }
 
-  .callout.callout-captioned .callout-header {
+  .callout.callout-titled .callout-header {
     padding-top: 0.2em;
     margin-bottom: -0.2em;
   }
 
-  .callout.callout-captioned .callout-caption  p {
+  .callout.callout-titled .callout-title  p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
     
-  .callout.callout-captioned.callout-style-simple .callout-content  p {
+  .callout.callout-titled.callout-style-simple .callout-content  p {
     margin-top: 0;
   }
 
-  .callout.callout-captioned.callout-style-default .callout-content  p {
+  .callout.callout-titled.callout-style-default .callout-content  p {
     margin-top: 0.7em;
   }
 
-  .callout.callout-style-simple div.callout-caption {
+  .callout.callout-style-simple div.callout-title {
     border-bottom: none;
     font-size: .9rem;
     font-weight: 600;
     opacity: 75%;
   }
 
-  .callout.callout-style-default  div.callout-caption {
+  .callout.callout-style-default  div.callout-title {
     border-bottom: none;
     font-weight: 600;
     opacity: 85%;
@@ -205,7 +209,7 @@
     background-size: 0.9rem 0.9rem;
   }
 
-  .callout-caption {
+  .callout-title {
     display: flex
   }
     
@@ -218,16 +222,17 @@
     display: none !important;
   }
 
-  .callout.callout-captioned .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
-  .callout.callout-captioned .callout-icon::before {
+  .callout.callout-titled .callout-icon::before {
     margin-top: .5rem;
     padding-right: .5rem;
   }
 
-  .callout:not(.callout-captioned) .callout-icon::before {
+  .callout:not(.callout-titled) .callout-icon::before {
     margin-top: 1rem;
     padding-right: .5rem;
   }
@@ -242,7 +247,7 @@
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
   }
 
-  div.callout-note.callout-style-default .callout-caption {
+  div.callout-note.callout-style-default .callout-title {
     background-color: #dae6fb
   }
 
@@ -254,7 +259,7 @@
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
   }
 
-  div.callout-important.callout-style-default .callout-caption {
+  div.callout-important.callout-style-default .callout-title {
     background-color: #f7dddc
   }
 
@@ -266,7 +271,7 @@
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
   }
 
-  div.callout-warning.callout-style-default .callout-caption {
+  div.callout-warning.callout-style-default .callout-title {
     background-color: #fcefdc
   }
 
@@ -278,7 +283,7 @@
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
   }
 
-  div.callout-tip.callout-style-default .callout-caption {
+  div.callout-tip.callout-style-default .callout-title {
     background-color: #ccf1e3
   }
 
@@ -290,7 +295,7 @@
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
   }
 
-  div.callout-caution.callout-style-default .callout-caption {
+  div.callout-caution.callout-style-default .callout-title {
     background-color: #ffe5d0
   }
 
@@ -394,426 +399,622 @@
 </div>
 
 </section>
+<section id="content-warning" class="slide level2">
+<h2>Content Warning:</h2>
+<p><strong>Adapted from group 1:</strong></p>
+<p>The next two projects address topics related to firearm injuries, gun violence, and suicide attempt by firearm. Some content may be distressing or triggering for some individuals. Please engage with care when reading this content and prioritize your well-being.</p>
+</section>
 <section>
-<section id="yyds" class="title-slide slide level1 center" data-background-color="#fab1a0" data-background-opacity="70%">
-<h1>yyds</h1>
+<section id="group-1-exploring-non-fatal-firearm-injuries" class="title-slide slide level1 center" data-background-color="#fab1a0" data-background-opacity="70%">
+<h1>group 1: Exploring Non-Fatal Firearm Injuries</h1>
 
+</section>
+<section id="table-1" class="slide level2">
+<h2>Table 1</h2>
+<p><a href="images/table1_short.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/table1_short.png"></a></p>
+</section>
+<section id="table-2" class="slide level2">
+<h2>Table 2</h2>
+<p><a href="images/table1sex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="images/table1sex.png"></a></p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-
-<img data-src="images/yyds/readme_intro.png" class="r-stretch"></section>
+<p><a href="images/clipboard-551129185.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="images/clipboard-551129185.png"></a></p>
+</section>
 <section id="section-1" class="slide level2">
 <h2></h2>
-
-<img data-src="images/yyds/yyds1.png" class="r-stretch"></section>
+<p><a href="images/clipboard-14624904.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="images/clipboard-14624904.png"></a></p>
+</section>
 <section id="section-2" class="slide level2">
 <h2></h2>
-
-<img data-src="images/yyds/yyds2.png" class="r-stretch"></section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-
-<img data-src="images/yyds/yyds3.png" class="r-stretch"></section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-
-<img data-src="images/yyds/yyds4.png" class="r-stretch"></section>
-<section id="section-5" class="slide level2">
-<h2></h2>
-
-<img data-src="images/yyds/yyds5.png" class="r-stretch"></section>
-<section id="section-6" class="slide level2">
-<h2></h2>
+<p><a href="images/clipboard-3116515423.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="images/clipboard-3116515423.png"></a></p>
+</section>
+<section id="fit-statistics" class="slide level2">
+<h2>Fit Statistics</h2>
+<p><a href="images/clipboard-968824743.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="images/clipboard-968824743.png"></a></p>
+</section>
+<section id="reflections" class="slide level2">
+<h2>Reflections</h2>
+<p><small></small></p><small>
+<ul>
+<li><em>What students figured out how to do along the way:</em> In our project group, we learned how to collaboratively brainstorm a project that had theoretical grounding, available data, and an opportunity to produce meaningful analysis. Through this process, we learned how to delegate tasks for different parts of the project workflow and depend on each other for parts of the project.</li>
+<li><em>What they struggled with:</em> We struggled with project organization because of our relative unfamiliarity with GitHub. We used this opportunity to try to learn how to navigate the platform more effectively, but we also relied on other forms of organization.</li>
+<li><em>What they wouldn’t have been able to do before taking the class:</em> Many of us are relatively new to R, so to make a whole project (albeit a quickly made one) is quite the feat. We learned how to apply our biostatistical and science communication training to effectively chalk up a project and create deliverables that tell a story about the data.</li>
+<li><em>What principles they found useful in decision-making during the project:</em> We centered collaboration and transparency in our decision-making. We were communicative with each other about our questions and struggles, so we all were able to give feedback and iterate effectively.</li>
+</ul>
+</small><p><small></small></p>
+</section>
+<section id="great-code-structure" class="slide level2">
+<h2>great code structure!</h2>
+<p><a href="images/clipboard-2942364766.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="images/clipboard-2942364766.png"></a></p>
+</section>
+<section id="data_cleaning_factor_variables.r" class="slide level2">
+<h2><code>01_data_cleaning_factor_variables.R</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="do">## Dependencies </span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Install dependencies</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">library</span>(purrr)</span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">library</span>(gt)</span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">library</span>(gtsummary)</span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="fu">library</span>(MetBrewer)</span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">library</span>(here)</span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="fu">library</span>(webshot2)</span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="fu">library</span>(rnaturalearthdata)</span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># objective: convert variables to factor variables</span></span>
+<span id="cb1-2"><a href=""></a><span class="co"># variables to convert: </span></span>
+<span id="cb1-3"><a href=""></a><span class="co"># AGENG_C - Age groups in 9 levels</span></span>
+<span id="cb1-4"><a href=""></a><span class="co"># FIREARM_C - Firearm type</span></span>
+<span id="cb1-5"><a href=""></a><span class="co"># WHO_C - Relationship between injurer and injured </span></span>
+<span id="cb1-6"><a href=""></a><span class="co"># SEX - Sex of injured person</span></span>
+<span id="cb1-7"><a href=""></a><span class="co"># RACE_C - Race of injured person</span></span>
+<span id="cb1-8"><a href=""></a><span class="co"># CLASS_C - Incident classification</span></span>
+<span id="cb1-9"><a href=""></a><span class="co"># ONTHEJOB - Injured on the job</span></span>
+<span id="cb1-10"><a href=""></a></span>
+<span id="cb1-11"><a href=""></a><span class="co">#variable to create:</span></span>
+<span id="cb1-12"><a href=""></a><span class="co"># AGENG2_C_FACTOR - Age group in 4 levels</span></span>
+<span id="cb1-13"><a href=""></a></span>
+<span id="cb1-14"><a href=""></a><span class="co">#variables to keep as-is:</span></span>
+<span id="cb1-15"><a href=""></a><span class="co"># YEAR - Year</span></span>
+<span id="cb1-16"><a href=""></a></span>
+<span id="cb1-17"><a href=""></a><span class="co"># load dependencies  ------------------------------------------------------</span></span>
+<span id="cb1-18"><a href=""></a></span>
+<span id="cb1-19"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-20"><a href=""></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-21"><a href=""></a></span>
+<span id="cb1-22"><a href=""></a></span>
+<span id="cb1-23"><a href=""></a><span class="co"># load data ---------------------------------------------------------------</span></span>
+<span id="cb1-24"><a href=""></a>df <span class="ot">&lt;-</span>  <span class="fu">read_excel</span>(<span class="st">"data/Firearm-Injuries-2004-2014-Data.xlsx"</span>)</span>
+<span id="cb1-25"><a href=""></a><span class="fu">head</span>(df)</span>
+<span id="cb1-26"><a href=""></a></span>
+<span id="cb1-27"><a href=""></a></span>
+<span id="cb1-28"><a href=""></a><span class="co"># AGENG_C - Age groups in 9 levels  ---------------------------------------</span></span>
+<span id="cb1-29"><a href=""></a>df<span class="sc">$</span>AGENG_C_FACTOR <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>AGENG_C)</span>
+<span id="cb1-30"><a href=""></a><span class="fu">class</span>(df<span class="sc">$</span>AGENG_C_FACTOR)</span>
+<span id="cb1-31"><a href=""></a><span class="co"># [1] "factor"</span></span>
+<span id="cb1-32"><a href=""></a><span class="fu">unique</span>(df<span class="sc">$</span>AGENG_C_FACTOR)</span>
+<span id="cb1-33"><a href=""></a><span class="co"># [1] 4 5 2 8 6 0 3 7 1 9</span></span>
+<span id="cb1-34"><a href=""></a><span class="co"># Levels: 0 1 2 3 4 5 6 7 8 9</span></span>
+<span id="cb1-35"><a href=""></a><span class="co"># When making the graphs using this variable, make sure to adjust labels for readability </span></span>
+<span id="cb1-36"><a href=""></a></span>
+<span id="cb1-37"><a href=""></a></span>
+<span id="cb1-38"><a href=""></a><span class="co"># Creating smaller age bins -----------------------------------------------</span></span>
+<span id="cb1-39"><a href=""></a></span>
+<span id="cb1-40"><a href=""></a><span class="co"># the existing categories for age bins is too granular so let's make new factor variable for age</span></span>
+<span id="cb1-41"><a href=""></a><span class="co"># intended levels: </span></span>
+<span id="cb1-42"><a href=""></a><span class="co"># NA:  Unknown</span></span>
+<span id="cb1-43"><a href=""></a><span class="co"># bin 1: 0-14</span></span>
+<span id="cb1-44"><a href=""></a><span class="co"># bin 2: 15-34</span></span>
+<span id="cb1-45"><a href=""></a><span class="co"># bin 3: 35-54</span></span>
+<span id="cb1-46"><a href=""></a><span class="co"># bin 4: 55+</span></span>
+<span id="cb1-47"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb1-48"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">AGENG2_C_FACTOR =</span> <span class="fu">factor</span>(</span>
+<span id="cb1-49"><a href=""></a>    <span class="fu">case_when</span>(</span>
+<span id="cb1-50"><a href=""></a>      AGENYR_C <span class="sc">&gt;=</span><span class="dv">0</span> <span class="sc">&amp;</span> AGENYR_C <span class="sc">&lt;=</span><span class="dv">14</span> <span class="sc">~</span> <span class="st">"0-14"</span>,</span>
+<span id="cb1-51"><a href=""></a>      AGENYR_C <span class="sc">&gt;=</span><span class="dv">15</span> <span class="sc">&amp;</span> AGENYR_C <span class="sc">&lt;=</span><span class="dv">34</span> <span class="sc">~</span> <span class="st">"15-34"</span>,</span>
+<span id="cb1-52"><a href=""></a>      AGENYR_C <span class="sc">&gt;=</span><span class="dv">35</span> <span class="sc">&amp;</span> AGENYR_C <span class="sc">&lt;=</span><span class="dv">55</span> <span class="sc">~</span> <span class="st">"35-54"</span>,</span>
+<span id="cb1-53"><a href=""></a>      AGENYR_C <span class="sc">&gt;=</span><span class="dv">55</span> <span class="sc">~</span> <span class="st">"55+"</span></span>
+<span id="cb1-54"><a href=""></a>    )</span>
+<span id="cb1-55"><a href=""></a>  ))</span>
+<span id="cb1-56"><a href=""></a><span class="fu">glimpse</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p></p>
+</section>
+<section id="one-comment-on-file-structure" class="slide level2">
+<h2>one comment on file structure</h2>
+<p><em>ideally</em> <code>99_run_everything.R</code> should just be a script that essentially <code>source</code>s several other scripts along the following lines:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">library</span>(here)</span>
+<span id="cb2-2"><a href=""></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"00_dependencies.R"</span>))</span>
+<span id="cb2-3"><a href=""></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"01_load_data.R"</span>))</span>
+<span id="cb2-4"><a href=""></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"02_clean_data.R"</span>))</span>
+<span id="cb2-5"><a href=""></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"03_descriptive_tables.R"</span>))</span>
+<span id="cb2-6"><a href=""></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"04_stacked_bar_charts.R"</span>))</span>
+<span id="cb2-7"><a href=""></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"05_regression_models.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>the key idea of it being that we want users to be able to run the whole analysis just by hitting Cmd/Ctrl+Enter just a handful of times.</p>
+<p>It also makes development easier because if you want to work on, say, the 5th script, you just hit Cmd/Ctrl+Enter to run up through the 4th script and then go into the 5th script and start doing your</p>
+</section>
+<section id="one-comment-on-regression-modeling" class="slide level2">
+<h2>one comment on regression modeling</h2>
+<p>it’s not clear to me if you have non-cases in your dataset, so is the regression model appropriate?</p>
+<p>in your intro you say,</p>
+<blockquote>
+<p>In this study, we used data from the <a href="https://github.com/nytimes/">NY Times GitHub repository</a>, which focuses specifically on examining all nonfatal injuries related to firearms (i.e., injuries caused by powder-charged guns) as well as nonfatal injuries involving BB and pellet guns, as reported through NEISS from 2004 to 2014. The dataset comprises cases where individuals made initial visits to the emergency department for injury treatment.</p>
+</blockquote>
+</section>
+<section id="great-job" class="slide level2" data-background-color="#fab1a0" data-background-opacity="70%">
+<h2>great job!</h2>
+<p>I thought you had really clear figures, good use of color, and good project file organization.</p>
 </section></section>
 <section>
-<section id="we-r-wizards" class="title-slide slide level1 center" data-background-color="#74b9ff" data-background-opacity="70%">
-<h1>we R wizards</h1>
+<section id="group-2-school-shooting-events" class="title-slide slide level1 center" data-background-color="#2d3436" data-background-opacity="70%">
+<h1>group 2: school shooting events</h1>
 
+</section>
+<section id="introduction" class="slide level2">
+<h2>introduction</h2>
+<blockquote>
+<p>We utilized the K-12 School Shooting Database from the Center for Homeland Defense and Security (CHDS) to analyze the frequency and distribution of school shootings across U.S. states from 1970 to 2020. We then look at how this frequency varies by passage of five different gun laws, ranging from minimum age for gun possession to necessity of background checks. By understanding trends and potential patterns, this work could inform effective policy and the development of risk prevention strategies. To this effect, we conduct a Difference-in-difference analysis of laws with a significant association with school shooting events to clarify the policy impacts on shooting events.</p>
+</blockquote>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-3248248329.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="images/clipboard-3248248329.png"></a></p>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-2922780616.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="images/clipboard-2922780616.png"></a></p>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-2472605814.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img data-src="images/clipboard-2472605814.png"></a></p>
+</section>
+<section id="section-6" class="slide level2">
+<h2><img data-src="images/clipboard-2268176808.png"></h2>
 </section>
 <section id="section-7" class="slide level2">
 <h2></h2>
-
-<img data-src="images/we-R-wizards/1.png" class="r-stretch"></section>
+<p><a href="images/clipboard-782066568.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img data-src="images/clipboard-782066568.png"></a></p>
+</section>
 <section id="section-8" class="slide level2">
 <h2></h2>
-
-<img data-src="images/we-R-wizards/2.png" class="r-stretch"></section>
+<p><a href="images/clipboard-1248017102.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img data-src="images/clipboard-1248017102.png"></a></p>
+</section>
 <section id="section-9" class="slide level2">
 <h2></h2>
-
-<img data-src="images/we-R-wizards/3.png" class="r-stretch"></section>
+<p><a href="images/clipboard-2427587495.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img data-src="images/clipboard-2427587495.png"></a></p>
+</section>
 <section id="section-10" class="slide level2">
 <h2></h2>
+<p><a href="images/clipboard-3036437640.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img data-src="images/clipboard-3036437640.png"></a></p>
+</section>
+<section id="great-inline-references" class="slide level2">
+<h2>great inline references</h2>
+<blockquote>
+<p>Source: Florida Senate. (2018). Committee Substitute for Senate Bill No.&nbsp;7026: Marjory Stoneman Douglas High School Public Safety Act. The Florida Senate. <a href="https://www.flsenate.gov/Session/Bill/2018/07026"><strong>https://www.flsenate.gov/Session/Bill/2018/07026</strong></a></p>
+</blockquote>
+<blockquote>
+<p>Source: Everytown Research. (2025). Compare State Gun Laws. [<a href="https://everytownresearch.org/rankings/compare/"><strong>https://everytownresearch.org/rankings/compare/</strong></a>]</p>
+</blockquote>
+</section>
+<section id="conclusions" class="slide level2">
+<h2>Conclusions</h2>
+<p><small> This study brought interesting themes to light on the nature of school shooting events. Particulary, our descriptive analysis showed these events were typically in response to an escalation of a dispute and carried out with a handgun. Location wise, the majority of events occurred in high school and commonly oustide the school. Also, the vast majority were not pre-planned attacks.<br><br> We ran our regression analysis to find associations between school shooting events and gun laws. Of note, the only significant associations were with the presence of laws that dictated a minimum age for handgun possession and laws that allowed court-ordered gun removal for a person posing danger to themselves or others. The handgun possession law was associated with fewer school shooting events, which aligns with our descriptive analysis showing most shooting events occurred with handguns. Suprisingly, the law allowing for court-ordered gun removal was associated with increaesd shooting events. One explanation could be most shooting events were not pre-planned attacks, so being able to identify someone as a danger to themselves/others then removing their gun may not be as effective. Also, while a child may be the perpetrator of the gun violence attempt, only the adult owner of the gun may be evaluated for their gun possession ability. Another explanation could be this law was passed in states with high gun ownership to temper the occurrence of shooting events. So, by prevalence of gun ownership, there would be an increased number of shooting events.<br><br> To improve our analysis, we could explore moderating variables such as prevlance of gun ownership. Since the data set on gun violence left out many of these variables, we did not test for their prevalence in our descriptive analysis. Data on socioeconomic status and mental health (e.g., depression, anxiety disorders) could have clarified the associations we found.<br><br> Overall, handgun possession laws appear effective in reducing shooting events and should be investigated further. More data on shooting events with the variables discussed above is needed to craft effective policies. This issue is difficult to investigate, but necessary to dig further into how best to protect children from gun violence. </small></p>
+</section>
+<section id="great-job-1" class="slide level2" data-background-color="#2d3436" data-background-opacity="70%">
+<h2>great job!</h2>
+<ul>
+<li>I’m really impressed you incorporated state population denominators so rapidly upon hearing our feedback.</li>
+<li>Really nice code file organization</li>
+<li><code>geofacet</code> is super clean</li>
+</ul>
+</section></section>
+<section>
+<section id="group-3-the-association-between-wealth-and-life-expectancy-in-the-us" class="title-slide slide level1 center" data-background-color="#e17055" data-background-opacity="70%">
+<h1>group 3: The Association between Wealth and Life Expectancy in the US</h1>
 
-<img data-src="images/we-R-wizards/4.png" class="r-stretch"></section>
+</section>
+<section id="introduction-1" class="slide level2">
+<h2>introduction</h2>
+<p>For this final group research project, we want to assess the <strong>association between wealth and life expectancy</strong> using the US census track data level. We hypothesize that <strong>wealth is positively associated with life expectancy</strong>.</p>
+<p>Wealth is one of the domains of structural racism besides the built environment, criminal justice, education, housing, income and poverty, social cohesion, and transportation (Dyer et al., 2023). A cohort study in the US found that wealth disparities and mortality are positively associated (Himmelstein et al., 2022). For instance, the authors found that <strong>Black middle-aged and older adults live shorter than their White counterparts</strong>, and much of the variation is attributed to wealth disparities.</p>
+</section>
+<section id="data" class="slide level2">
+<h2>data</h2>
+<p>We used the <strong>Structural Racism Effect Index (SREI)</strong> data for our analysis (Dyer et al., 2023).The SREI data were built from the US census track data level (N=71,917). The SREI is composed of 5 domains: (1) built environment, (2) criminal justice, (3) education, (4) employment, (5) housing, (6) income and poverty, (7) social cohesion, (8) transportation, and (9) wealth. All variables have been standardized.</p>
+</section>
+<section id="exposure" class="slide level2">
+<h2><strong>Exposure</strong></h2>
+<p><strong>Wealth</strong> (<span class="math inline">\(Y_i\)</span>) is our main exposure at a tract <strong>i</strong>. Wealth is a standardized measure that was built from (1) aggregate home value, (2) median real estate taxes paid, (3) median home value, (4) median gross rent, (5) median monthly mortgage, (6) owner-occupied homes census tract data (Dyer et al., 2023).</p>
+</section>
+<section id="covariates" class="slide level2">
+<h2><strong>Covariates</strong></h2>
+<p>We controlled for other potential confounders such as the income and poverty, employment, education, and, the population size.</p>
+</section>
+<section id="modeling" class="slide level2">
+<h2>Modeling</h2>
+<p>We ran 6 linear models:</p>
+<p><span class="math inline">\(Y_i = \beta_0 + bWealth_i\)</span></p>
+<p><span class="math inline">\(Y_i = \beta_0 + \beta_1Wealth_i + \beta_2 IncomeAndPoverty_i\)</span></p>
+<p><span class="math inline">\(Y_i = \beta_0 + \beta_1Wealth_i + \beta_2IncomeAndPoverty_i + \beta_3Employment_i\)</span></p>
+<p><span class="math inline">\(Y_i = \beta_0 + \beta_1Wealth_i + \beta_2IncomeAndPoverty_i + \beta_3Employment_i + \beta_4Education_i\)</span></p>
+<p><span class="math inline">\(Y_i = \beta_0+ \beta_1Wealth_i + \beta_3IncomeAndPoverty_i + \beta_3Employment_i + \beta_4Education_i +\beta_5Population_i\)</span></p>
+<p><span class="math inline">\(Y_i = \beta_0+ \beta_1Wealth_i + \beta_3IncomeAndPoverty_i + \beta_3Employment_i + \beta_4Education_i +\beta_5Population_i + \\ \hspace{.5in}\beta_6Wealth_i\times IncomeAndPoverty_i\times Education_i\times Population_i\)</span></p>
+</section>
 <section id="section-11" class="slide level2">
-<h2></h2>
-
-<img data-src="images/we-R-wizards/5.png" class="r-stretch"></section>
+<h2><img data-src="images/clipboard-1259573681.png"></h2>
+</section>
 <section id="section-12" class="slide level2">
-<h2></h2>
-
-<img data-src="images/we-R-wizards/6.png" class="r-stretch"></section>
+<h2><img data-src="images/clipboard-186679391.png"></h2>
+</section>
 <section id="section-13" class="slide level2">
-<h2></h2>
-
-<img data-src="images/we-R-wizards/7.png" class="r-stretch"></section>
+<h2><img data-src="images/clipboard-1555022002.png"></h2>
+</section>
 <section id="section-14" class="slide level2">
-<h2></h2>
-
-<img data-src="images/we-R-wizards/8.png" class="r-stretch"></section>
+<h2><img data-src="images/clipboard-2803151860.png"></h2>
+</section>
 <section id="section-15" class="slide level2">
 <h2></h2>
-
-<img data-src="images/we-R-wizards/9.png" class="r-stretch"></section></section>
-<section>
-<section id="vada-r" class="title-slide slide level1 center" data-background-color="#e17055" data-background-opacity="70%">
-<h1>VADA-R</h1>
-<p>“We are team VADA-R, not to be confused with the “Darth” version from Star Wars.”</p>
-</section>
-<section id="introduction" class="slide level2">
-<h2>Introduction</h2>
-<p>For this project, we used the CDC’s Nutrition, Physical Activity, and Obesity Data available at: www.cdc.gov/nccdphp/dnpao/data-trends-maps/index.html</p>
-<h3 id="motivation">Motivation</h3>
-<p>Our goal was to study the association of living near parks and population-level obesity in the US. Being inactive and leading a sedentary lifestyle are modifiable factors that are known to be associated with obesity. Accordingly, living near parks and other open spaces may encourage physical activity. However, whether living within close proximity to parks is associated with a lower population-level prevalence of obesity is unknown.</p>
-<h3 id="hypothesis"><strong>Hypothesis</strong>:</h3>
-<p>Using ecologic U.S. data, we hypothesized that populations living within close proximity to parks would have a lower prevalence of obesity.</p>
+<p><a href="images/clipboard-1618602562.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img data-src="images/clipboard-1618602562.png"></a></p>
 </section>
 <section id="section-16" class="slide level2">
 <h2></h2>
-
-<img data-src="images/VADA-R/1.png" class="r-stretch"></section>
+<p><a href="images/clipboard-4273820981.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img data-src="images/clipboard-4273820981.png"></a></p>
+</section>
 <section id="section-17" class="slide level2">
 <h2></h2>
-
-<img data-src="images/VADA-R/2.png" class="r-stretch"></section>
-<section id="section-18" class="slide level2">
-<h2></h2>
-
-<img data-src="images/VADA-R/3.png" class="r-stretch"></section>
-<section id="section-19" class="slide level2">
-<h2></h2>
-
-<img data-src="images/VADA-R/5.png" class="r-stretch"></section>
-<section id="section-20" class="slide level2">
-<h2></h2>
-
-<img data-src="images/VADA-R/6.png" class="r-stretch"></section>
-<section id="section-21" class="slide level2">
-<h2></h2>
-
-<img data-src="images/VADA-R/7.png" class="r-stretch"></section>
-<section id="section-22" class="slide level2">
-<h2></h2>
-
-<img data-src="images/VADA-R/8.png" class="r-stretch"></section>
-<section id="section-23" class="slide level2">
-<h2></h2>
-
-<img data-src="images/VADA-R/9.png" class="r-stretch"></section>
-<section id="section-24" class="slide level2">
-<h2></h2>
-
-<img data-src="images/VADA-R/10.png" class="r-stretch"></section></section>
+<p><a href="images/clipboard-3952299038.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img data-src="images/clipboard-3952299038.png"></a></p>
+</section>
+<section id="reflections-1" class="slide level2">
+<h2>Reflections</h2>
+<p><small> I become more confident using Github now. In the past, I was not comfortable using Github. I usually asked my collaborators to send any R scripts as an email attachment. I will start using Github now each time I start a new project. <br><br> I learned the importance of keeping code clean, efficient, and well-documented, with comments explaining each step—principles I intend to carry forward in my work. Before taking this course, my knowledge was limited to loading databases in R and running pre-written code. Now, however, I feel confident in my ability to create beautiful plots and conduct a wide range of analyses independently.<br><br> Before taking this class, I was unaware that I could create such beautiful, intuitive, and precise graphs using R. This realization has given me a sense of accomplishment, knowing that I am now capable of producing the kind of visuals seen in professional and formal publications.<br><br> Prior to this class, I had never heard of R Markdown, and whenever I encountered GitHub pages while searching for references, I would close them because I didn’t understand how GitHub worked. Through this final project, I learned how to effectively use GitHub for collaboration and how to utilize R Markdown to organize the final product … I learned that communication is the most crucial aspect when working with others on GitHub to avoid any troubles.<br><br> More than anything, this class has significantly boosted my confidence and comfort in working with R … During this final group project, I recoded data, created tables, and confidently utilized GitHub and R Markdown … <br><br> I struggle to understand the full scope of the dplyr package in R for data manipulation; however, I recognize that data cleaning and manipulation are skills that improve with practice. </small></p>
+</section>
+<section id="great-job-2" class="slide level2" data-background-color="#e17055" data-background-opacity="70%">
+<h2>great job!</h2>
+<ul>
+<li>really exceptional reflections</li>
+<li>great data visualizations</li>
+<li>overcame great challenges with mapping</li>
+</ul>
+</section></section>
 <section>
-<section id="r-made-simple" class="title-slide slide level1 center" data-background-color="#a29bfe" data-background-opacity="70%">
-<h1>R-made-simple</h1>
-
-</section>
-<section id="section-25" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/1.png" class="r-stretch"></section>
-<section id="section-26" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/2.png" class="r-stretch"></section>
-<section id="section-27" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/3.png" class="r-stretch"></section>
-<section id="section-28" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/3b.png" class="r-stretch"></section>
-<section id="section-29" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/4.png" class="r-stretch"></section>
-<section id="section-30" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/5.png" class="r-stretch"></section>
-<section id="section-31" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/5b.png" class="r-stretch"></section>
-<section id="section-32" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/6.png" class="r-stretch"></section>
-<section id="section-33" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/6b.png" class="r-stretch"></section>
-<section id="section-34" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/7.png" class="r-stretch"></section>
-<section id="section-35" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/8.png" class="r-stretch"></section>
-<section id="section-36" class="slide level2">
-<h2></h2>
-
-<img data-src="images/R-made-simple/9.png" class="r-stretch"></section></section>
-<section>
-<section id="pediatrics-ed-nutrition" class="title-slide slide level1 center" data-background-color="#ffbe76" data-background-opacity="70%">
-<h1>pediatrics-ED-nutrition</h1>
-
-</section>
-<section id="section-37" class="slide level2">
-<h2></h2>
-
-<img data-src="images/pediatrics-ED-nutrition/1.png" class="r-stretch"></section>
-<section id="section-38" class="slide level2">
-<h2></h2>
-
-<img data-src="images/pediatrics-ED-nutrition/2.png" class="r-stretch"></section>
-<section id="section-39" class="slide level2">
-<h2></h2>
-
-<img data-src="images/pediatrics-ED-nutrition/3.png" class="r-stretch"></section>
-<section id="section-40" class="slide level2">
-<h2></h2>
-
-<img data-src="images/pediatrics-ED-nutrition/4.png" class="r-stretch"></section>
-<section id="section-41" class="slide level2">
-<h2></h2>
-
-<img data-src="images/pediatrics-ED-nutrition/5.png" class="r-stretch"></section>
-<section id="section-42" class="slide level2">
-<h2></h2>
-
-<img data-src="images/pediatrics-ED-nutrition/6.png" class="r-stretch"></section>
-<section id="section-43" class="slide level2">
-<h2></h2>
-
-<img data-src="images/pediatrics-ED-nutrition/7.png" class="r-stretch"></section>
-<section id="section-44" class="slide level2">
-<h2></h2>
-
-<img data-src="images/pediatrics-ED-nutrition/8.png" class="r-stretch"></section>
-<section id="section-45" class="slide level2">
-<h2></h2>
-
-<img data-src="images/pediatrics-ED-nutrition/9.png" class="r-stretch"></section>
-<section id="git_access.r" class="slide level2">
-<h2>98_git_access.R</h2>
-
-<img data-src="images/pediatrics-ED-nutrition/10.png" class="r-stretch"></section></section>
-<section>
-<section id="noel-fan-club" class="title-slide slide level1 center" data-background-color="#7ed6df" data-background-opacity="70%">
-<h1>noel-fan-club</h1>
-
-</section>
-<section id="section-46" class="slide level2">
-<h2></h2>
-
-<img data-src="images/noel-fan-club/1.png" class="r-stretch"></section>
-<section id="introduction-1" class="slide level2">
-<h2>Introduction</h2>
-<p>Our study aims to determine the role of physical exercise as a therapeutic strategy for individuals with AD. This data analysis delves into the relationship between exercises and their potential impact on cognitive function, specifically focusing on improving the Mini-Mental State Examination (MMSE) scores. MMSE is a widely used screening tool for cognitive impairment and dementia; consisting of a brief structured questionnaire that assesses various cognitive functions, including orientation, memory, attention, language, and visual-spatial skills. AD is characterized by progressive cognitive decline, which poses a significant challenge to individuals and society at large. We aim to investigate the potential benefits of exercise in mitigating cognitive decline in Alzheimer’s. By exploring the association between exercise and enhancements in MMSE scores, our study seeks to contribute valuable insights into how a physically active lifestyle may serve as a modifiable factor influencing cognitive well-being in individuals with Alzheimer’s disease.</p>
-</section>
-<section id="information-on-dataset-variables" class="slide level2">
-<h2>Information on dataset &amp; variables</h2>
-<p>https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/ER8ICT/A6HAVX&amp;version=1.0 Summary of the Alzheimer’s Disease Exercise Program Trial (ADEPT: ClinicalTrials.gov, NCT01128361):</p>
-<p><strong>Study Design:</strong><br>
-A pilot randomized controlled trial of 26 weeks of aerobic exercise (AEx) versus a non-aerobic stretching and toning control (ST).</p>
-<p><strong>Participant Information:</strong><br>
-Included adults over 55 in the earliest stages of AD-related cognitive decline. Participants were assigned to AEx and ST groups in a 1:1 ratio. Recruitment from August 2, 2010 through September 26, 2014. Follow-up testing was completed by April 17, 2015.</p>
-<p>Among 76 participants randomized into two groups, a total of 68 participants (89%: ST n = 34, AEx n = 34) completed the study.</p>
-</section>
-<section id="interventions" class="slide level2">
-<h2><strong>Interventions:</strong></h2>
-<p><em>AEx group</em><br>
-Began the intervention with a goal of 60min/week in Week 1 and increased weekly exercise duration by approximately 21min/week until they achieved the current recommended target duration of 150min per week, distributed over 3–5 sessions. Target heart rate (HR) zones were gradually increased from 40–55% to 60–75% of HR reserve based on resting and peak HR during cardiorespiratory fitness testing.</p>
-<p><em>ST group</em><br>
-Performed a series of non-aerobic exercises that rotated weekly (core strengthening, resistance bands, modified tai chi, modified yoga). Participants wore HR monitors and were asked to keep their HR &lt; 100 bpm. Exercise trainers helped participants adjust exercise intensity to reduce HR as necessary.</p>
-<p>Both groups were supervised by exercise trainers during weeks 1-6 and gradually reduced supervised sessions to 1 per week based on perceived ability to be safe and independent and in consultation with the participant’s study partner and study staff.</p>
-</section>
-<section id="variables-description" class="slide level2">
-<h2>Variables Description</h2>
-<p><strong>Independent Variables</strong> - <em>DurationPct</em> : Percentage of prescribed exercise completed by participant.</p>
-<p><strong>Dependent Variables</strong> - <em>MMSE</em> : Mini-mental State Exam; The MMSE is a paper-based test with a maximum score of 30, with lower scores indicating more severe cognitive problems. The cut point established for the MMSE defines ‘normal’ cognitive function and is usually set at 24, although theoretically it could fall anywhere from 1 to 30. Will be making two new variables: (1) week 13 – baseline, (2) week 26 – baseline.</p>
-<p><strong>Covariates</strong> - Age : Age in years<br>
-- Sex : Sex (female, male)<br>
-- Edu : Education in years<br>
-- Lean_Mass : Lean body mass in kg<br>
-- Max_VO2_mL : Maximal oxygen consumption during a graded exercise test in mL/kg body mass/minute - Six_Min_Walk : Six-minute Walk Test in yards –&gt; converted to meters and into binary variable (with cut-point difference &gt;=32, &lt;32)</p>
-<p><strong>Others</strong> - IDn : Participant ID Number<br>
-- Timepoint : Timepoint of Measurement; baseline/week13/week26<br>
-- Arm : Intervention Arm; ST/AEx</p>
-</section>
-<section id="statistical-analysis" class="slide level2">
-<h2>statistical analysis</h2>
-<p>A <em>linear regression analysis</em> of the effect of treatment arm on our primary outcomes using R<br>
-Participants were included in analyses regardless of protocol adherence (As-treated analysis)<br>
-- Outcome: Change in MMSE score<br>
-As Continuous variables - Outcome 1: week 13 - baseline<br>
-- Outcome 2: week 26 - baseline<br>
-As Categorical variables - MMSE score week 13: Improved, Not improved - MMSE score week 26: Improved, Not improved - Fixed effects: Treatment Arm (AEx, ST)<br>
-- Models<br>
-- Model 1: Outcome (Δ MMSE) ~ Treatment (Duraction Pct) + Fixed effect (treatment arm)<br>
-- Model 2 (sociodemographic variables adjusted): MSSE ~ Model 1+ Age, Sex, Edu<br>
-- Model 3 (lifestyle variables included): MMSE ~ Model 2 + Max_VO2_mL, Six_Min_Walk, Lean_Mass - Model 4 (sensitivity analysis; exclude lean mass): MMSE ~ Model 2 + Max_VO2_mL, Six_Min_Walk,</p>
-<p>The covariates and confidence intervals will be obtained and visualized by forest plots</p>
-</section>
-<section id="section-47" class="slide level2">
-<h2></h2>
-
-<img data-src="images/noel-fan-club/2.png" class="r-stretch"></section>
-<section id="section-48" class="slide level2">
-<h2></h2>
-
-<img data-src="images/noel-fan-club/3.png" class="r-stretch"></section>
-<section id="section-49" class="slide level2">
-<h2></h2>
-
-<img data-src="images/noel-fan-club/4.png" class="r-stretch"></section>
-<section id="section-50" class="slide level2">
-<h2></h2>
-
-<img data-src="images/noel-fan-club/5.png" class="r-stretch"></section>
-<section id="section-51" class="slide level2">
-<h2></h2>
-
-<img data-src="images/noel-fan-club/6.png" class="r-stretch"></section>
-<section id="conclusion" class="slide level2">
-<h2>Conclusion</h2>
-<p>In conclusion, although there was no statistically significant changes in MMSE scores according to exercise intervention completion rates in either exercise arms, we believe meaningful trends were observed. There seems to be an improvement in MMSE scores after exercise interventions - especially from non-aerobic stretching and toning exercises. The statistical nonsignificance may be due to the relatively small sample size as well as the independent variable (exercise completion rate) that we used in the multivariate regression model, as it was in decimals rather than %.</p>
-</section>
-<section id="from-this" class="slide level2">
-<h2>from this …</h2>
-
-<img data-src="images/noel-fan-club/7.png" class="r-stretch"></section>
-<section id="section-52" class="slide level2">
-<h2></h2>
-
-<img data-src="images/noel-fan-club/8.png" class="r-stretch"></section>
-<section id="section-53" class="slide level2">
-<h2></h2>
-
-<img data-src="images/noel-fan-club/9.png" class="r-stretch"></section>
-<section id="to-this-is-amazing" class="slide level2">
-<h2>… to this is amazing!</h2>
-
-<img data-src="images/noel-fan-club/10.png" class="r-stretch"></section>
-<section id="section-54" class="slide level2">
-<h2></h2>
-
-<img data-src="images/noel-fan-club/11.png" class="r-stretch"></section></section>
-<section>
-<section id="jarvis-padawans" class="title-slide slide level1 center" data-background-color="#f78fb3" data-background-opacity="70%">
-<h1>jarvis’ padawans</h1>
+<section id="group-4-pfas-and-cancer" class="title-slide slide level1 center" data-background-color="#a29bfe" data-background-opacity="70%">
+<h1>group 4: PFAS and Cancer</h1>
 
 </section>
 <section id="introduction-2" class="slide level2">
-<h2>Introduction</h2>
-<p>As one of the pre-eminent pop music stars of our very digital time, Taylor Swift and her music have far-reaching influence – culturally, socially, and even financially (as economic evaluations of her recent ERAS tour have demonstrated). As her popularity has increased, her music has evolved to include a range of genres and styles. However, several themes have been preserved throughout this evolution, including self-confidence, heartbreak, nostalgia.</p>
-<p>One of the most remarkable aspects of her music is its relatability, especially regarding commentary on relationships and break-ups. Vulture published an <a href="https://www.vulture.com/article/taylor-swift-breakup-songs-ranked.html">article</a> ranking her break-up anthems – of which there are 44, spanning 10 of her 23 albums . Our analysis explores various patterns in emotion-related aspects of her music, including energy, danceability, use of explicit language, and expert categorization (by Vulture) as a break-up song.</p>
+<h2>introduction</h2>
+<blockquote>
+<p>Per- and polyfluoroalkyl substances have grown increasingly ubiquitious in the natural environment and human body, with biological half-lives ranging from 2-34 years (among thousands of different PFAS analytes).</p>
+</blockquote>
+<blockquote>
+<p>PFAS (perfluorooctane sulfonate) and PFOA (perfluorooctanoic acid), were among the most prevalent PFAS compounds detected in human serum (which remains the case for some populations). These two “legacy” PFAS have been largely restricted and removed from products, resulting in reduced exposure in recent years (although these analytes remaim in the environment due to bioaccumulation).</p>
+</blockquote>
+<blockquote>
+<p>We were curious whether associations were still notable between these legacy PFAS compounds and cancer</p>
+</blockquote>
 </section>
-<section id="section-55" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/1.png" class="r-stretch"></section>
-<section id="section-56" class="slide level2">
+<p><a href="images/clipboard-965864439.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img data-src="images/clipboard-965864439.png"></a></p>
+</section>
+<section id="section-19" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/2.png" class="r-stretch"></section>
-<section id="section-57" class="slide level2">
+<p><a href="images/clipboard-3269770917.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img data-src="images/clipboard-3269770917.png"></a></p>
+</section>
+<section id="reflections-2" class="slide level2">
+<h2>Reflections</h2>
+<blockquote>
+<p>During visualisation, my primary challenge was in generating forest plots using R, particularly with the sjplot package. What was particularly difficult was incorporating additional details to customise the plot. What helped solve these problems was learning how to work with ChatGPT effectively!</p>
+</blockquote>
+<blockquote>
+<p>The key principle I learned is, ‘Don’t clean when you’re hungry or tired.’ I spent hours trying to make adjustments in the code to show all the margins, but in the end, with some sleep and morning sunlight, it clicked in my mind, and the issue was solved.</p>
+</blockquote>
+</section>
+<section id="section-20" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/3.png" class="r-stretch"></section>
-<section id="section-58" class="slide level2">
+<blockquote>
+<p>While we decided to approach NA values through complete case analysis based on our project needs, a clean removal proved problematic as it inadvertently removed valuable data points. What proved most helpful was thoroughly examining datasets both pre- and post-merge to understand their structure and relationships. Through this process, I learned what it means to practically think about data quality assessment and the downstream implications of data cleaning decisions on analytical outcomes. I also learned a tonne about what it meant to work with a team on a common code base, and the value of communicating proactively! You don’t want to commit errors and overlaps.</p>
+</blockquote>
+</section>
+<section id="section-21" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/4.png" class="r-stretch"></section>
-<section id="section-59" class="slide level2">
+<blockquote>
+<p>After cleaning and transforming the data, I found extracting the coefficients from the models to be fairly stratightforward, but the formating of the odds ratio table to be more nuanced. More specifically, when trying to combine estimates from unadjusted and adjusted models it was difficult combining them side by side and also adding certain technical details (e.g., bolding text and increasing space between columns).</p>
+<p>Having multiple people working with the same data was understandably inconvenient at times.</p>
+</blockquote>
+</section>
+<section id="section-22" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/5.png" class="r-stretch"></section>
-<section id="section-60" class="slide level2">
+<p><a href="images/clipboard-1094772983.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img data-src="images/clipboard-1094772983.png"></a></p>
+</section>
+<section id="section-23" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/6.png" class="r-stretch"></section>
-<section id="section-61" class="slide level2">
+<p><a href="images/clipboard-2976637329.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img data-src="images/clipboard-2976637329.png"></a></p>
+</section>
+<section id="section-24" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/7.png" class="r-stretch"></section>
-<section id="section-62" class="slide level2">
+<p><a href="images/clipboard-1505478655.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img data-src="images/clipboard-1505478655.png"></a></p>
+</section>
+<section id="section-25" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/8.png" class="r-stretch"></section>
-<section id="section-63" class="slide level2">
+<p><a href="images/clipboard-3428175281.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img data-src="images/clipboard-3428175281.png"></a></p>
+<p><a href="images/clipboard-2175701629.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img data-src="images/clipboard-2175701629.png"></a></p>
+</section>
+<section id="section-26" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/9.png" class="r-stretch"></section>
-<section id="section-64" class="slide level2">
+<p><a href="images/clipboard-4124741432.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img data-src="images/clipboard-4124741432.png"></a></p>
+</section>
+<section id="section-27" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/10.png" class="r-stretch"></section>
-<section id="section-65" class="slide level2">
+<p><a href="images/clipboard-266039139.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img data-src="images/clipboard-266039139.png"></a></p>
+</section>
+<section id="section-28" class="slide level2">
 <h2></h2>
-
-<img data-src="images/jarvis-padawans/11.png" class="r-stretch"></section>
-<section id="nice-folder-structure" class="slide level2">
-<h2>nice folder structure 👍</h2>
-<p><img src="images/jarvis-padawans/12.png" style="height: 25%;"></p>
+<p><a href="images/clipboard-1990415832.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img data-src="images/clipboard-1990415832.png"></a></p>
+</section>
+<section id="great-job-3" class="slide level2" data-background-color="#a29bfe" data-background-opacity="70%">
+<h2>great job!</h2>
+<ul>
+<li>I love that you took what we’ve touched on just briefly (PFAS and other PFO/As) and ran with it.</li>
+<li>The ROC figure provides a compelling alternative to other fit statistics</li>
+<li>Again, great reflections</li>
+</ul>
 </section></section>
 <section>
-<section id="conclusions" class="title-slide slide level1 center" data-background-image="https://images.unsplash.com/photo-1705471162553-d8e200c4cbaa" data-background-opacity="70%" data-background-color="black">
-<h1>conclusions</h1>
+<section id="group-5-cancer-data-from-cdc-wonder" class="title-slide slide level1 center" data-background-color="#ffbe76" data-background-opacity="70%">
+<h1>group 5: cancer data from CDC WONDER</h1>
 
 </section>
-<section id="section-66" class="slide level2" data-background-image="https://images.unsplash.com/photo-1588421357574-87938a86fa28" data-background-opacity="70%" data-background-color="white">
-<h2></h2>
-<h3 id="everyone-did-a-great-job">Everyone did a great job!</h3>
-<div>
+<section id="introduction-3" class="slide level2">
+<h2>introduction</h2>
+<blockquote>
+<p>By leveraging statistical and visualization techniques, we aim to facilitate a deeper understanding of cancer patterns across different population subgroups.</p>
+<p>Through this study, we seek to answer questions as below:</p>
 <ul>
-<li class="fragment">You all really impressed me!</li>
-<li class="fragment">Several groups used the <strong>README.md</strong> file very well! <span style="font-size: 12pt">
-<ul>
-<li class="fragment">Would loved to have seen use of <strong>README.Rmd</strong> with <em>output_type: github_document</em> </li>
-</ul></span></li>
-<li class="fragment">Some people forgot to do author contributions</li>
-<li class="fragment">Many very nice figures and tables were created</li>
-<li class="fragment">You figured out quite elegant solutions to lots of coding challenges</li>
-<li class="fragment">Many of you were able to successfully divide tasks and work well as a team!</li>
+<li><p>Which demographic groups exhibit the highest cancer count for specific types of cancers?</p></li>
+<li><p>What trends and patterns emerge when incidence data is stratified by race, ethnicity, age, or sex?</p></li>
 </ul>
+</blockquote>
+</section>
+<section id="section-29" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-1003054331.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img data-src="images/clipboard-1003054331.png"></a></p>
+</section>
+<section id="section-30" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-1510074663.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29"><img data-src="images/clipboard-1510074663.png"></a></p>
+</section>
+<section id="section-31" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-2427121000.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30"><img data-src="images/clipboard-2427121000.png"></a></p>
+</section>
+<section id="section-32" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-1166160061.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31"><img data-src="images/clipboard-1166160061.png"></a></p>
+</section>
+<section id="section-33" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-1171793445.png" class="lightbox" data-gallery="quarto-lightbox-gallery-32"><img data-src="images/clipboard-1171793445.png"></a></p>
+</section>
+<section id="section-34" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-3393192651.png" class="lightbox" data-gallery="quarto-lightbox-gallery-33"><img data-src="images/clipboard-3393192651.png"></a></p>
+</section>
+<section id="section-35" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-2074431983.png" class="lightbox" data-gallery="quarto-lightbox-gallery-34"><img data-src="images/clipboard-2074431983.png"></a></p>
+</section>
+<section id="section-36" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-1473067843.png" class="lightbox" data-gallery="quarto-lightbox-gallery-35"><img data-src="images/clipboard-1473067843.png"></a></p>
+</section>
+<section id="section-37" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-1849634733.png" class="lightbox" data-gallery="quarto-lightbox-gallery-36"><img data-src="images/clipboard-1849634733.png"></a></p>
+</section>
+<section id="section-38" class="slide level2">
+<h2><img data-src="images/clipboard-2012927269.png"></h2>
+</section>
+<section id="nice-code-structure" class="slide level2">
+<h2>nice code structure</h2>
+<p><a href="images/clipboard-4133371113.png" class="lightbox" data-gallery="quarto-lightbox-gallery-37"><img data-src="images/clipboard-4133371113.png"></a></p>
+</section>
+<section id="some-very-nice-theme-ing" class="slide level2">
+<h2>some very nice theme-ing</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Automatically generate a palette with sufficient colors</span></span>
+<span id="cb3-2"><a href=""></a>custom_palette <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(</span>
+<span id="cb3-3"><a href=""></a>  <span class="st">"#E41A1C"</span>, <span class="st">"#377EB8"</span>, <span class="st">"#4DAF4A"</span>, <span class="st">"#FF7F00"</span>, <span class="st">"#984EA3"</span>, </span>
+<span id="cb3-4"><a href=""></a>  <span class="st">"#FF00FF"</span>, <span class="st">"#FFFF33"</span>, <span class="st">"#A6CEE3"</span>, <span class="st">"#B2DF8A"</span>, <span class="st">"#FB9A99"</span></span>
+<span id="cb3-5"><a href=""></a>))(<span class="dv">23</span>)</span>
+<span id="cb3-6"><a href=""></a></span>
+<span id="cb3-7"><a href=""></a><span class="co"># ... </span></span>
+<span id="cb3-8"><a href=""></a></span>
+<span id="cb3-9"><a href=""></a><span class="co"># ggplot() + </span></span>
+<span id="cb3-10"><a href=""></a>  <span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"serif"</span>) <span class="sc">+</span> <span class="co"># Use serif font</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="in-a-way-our-course-in-a-snapshot" class="slide level2">
+<h2>in a way, our course in a snapshot</h2>
+<p><a href="images/clipboard-2251240982.png" class="lightbox" data-gallery="quarto-lightbox-gallery-38"><img data-src="images/clipboard-2251240982.png"></a></p>
+</section>
+<section id="great-job-4" class="slide level2" data-background-color="#ffbe76" data-background-opacity="70%">
+<h2>great job!</h2>
+<ul>
+<li>really impressed by your visualizations</li>
+<li>your poisson regression table is very clear</li>
+<li>I am super happy to see groups using markdown and <code>README.md</code> documents</li>
+</ul>
+</section></section>
+<section>
+<section id="group-6-covid-19-vaccine-adverse-reactions-in-massachusetts-from-2021-2024-a-vaers-analysis" class="title-slide slide level1 center" data-background-color="#7ed6df" data-background-opacity="70%">
+<h1>group 6: <small>Covid-19 Vaccine Adverse Reactions in Massachusetts From 2021-2024: A VAERS Analysis</small></h1>
+
+</section>
+<section id="introduction-4" class="slide level2">
+<h2>introduction</h2>
+<blockquote>
+<p>What are the characteristics of adverse events reported of COVID-19 vaccine in Massachusetts from 2021-2024, including frequency of events by year, sex, and vaccine type?</p>
+</blockquote>
+</section>
+<section id="section-39" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-2411646538.png" class="lightbox" data-gallery="quarto-lightbox-gallery-39"><img data-src="images/clipboard-2411646538.png"></a></p>
+</section>
+<section id="section-40" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-1785967881.png" class="lightbox" data-gallery="quarto-lightbox-gallery-40"><img data-src="images/clipboard-1785967881.png"></a></p>
+</section>
+<section id="section-41" class="slide level2">
+<h2><img data-src="images/clipboard-1398240807.png"></h2>
+</section>
+<section id="section-42" class="slide level2">
+<h2><img data-src="images/clipboard-3241762596.png"></h2>
+</section>
+<section id="section-43" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-1612270530.png" class="lightbox" data-gallery="quarto-lightbox-gallery-41"><img data-src="images/clipboard-1612270530.png"></a></p>
+</section>
+<section id="section-44" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-1082100522.png" class="lightbox" data-gallery="quarto-lightbox-gallery-42"><img data-src="images/clipboard-1082100522.png"></a></p>
+</section>
+<section id="conclusions-1" class="slide level2">
+<h2>Conclusions</h2>
+<blockquote>
+<p>Our result is consistent with an effect described in the literature, known as the Weber Effect, whereby adverse vaccine events peak in the first year after vaccine roll out (Hoffman et al, 2014). There may also be bias introduced if those who had adverse reactions were less likeley to get re-vaccinated in 2022-2024, meaning that the remaining population in those years consists of individuals who did not have a negative reaction.</p>
+</blockquote>
+</section>
+<section id="section-45" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-575317410.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43"><img data-src="images/clipboard-575317410.png"></a></p>
+</section>
+<section id="reflections-3" class="slide level2">
+<h2>Reflections</h2>
+<blockquote>
+<p>In a poll of our group members, we found that 100% of our team were either a first time user (n=4) of R or had previous exposure at beginner level (n=3). Thus, the major challenges came from our lack of familiarity with coding in R, which meant that we put in significantly more work to do our analyses. We couldn’t have done any aspect of this project before taking the class, which means that our learning has been exponential in the past 2 weeks. When decision-making in this project, we utilized the skills of clear communication and good organization skills via a whatsapp group chat and a google document to organize our team, which allowed us to coordinate between multiple individuals. We also were able to be flexible to take peoples’ perspectives into account when developing our plan for datasets and figures.</p>
+</blockquote>
+</section>
+<section id="great-job-5" class="slide level2" data-background-color="#7ed6df" data-background-opacity="70%">
+<h2>great job!</h2>
+<ul>
+<li>I think you did an excellent job to 1) find a meaningful topic, 2) analyze the data to the best of your ability, 3) write it up in a very clear markdown document, and 4) reflect on your experiences in the class.</li>
+<li>It is all the more impressive knowing your group was composed of all beginners, and I’m so glad to see a sample of how much you’ve learned in these two weeks.</li>
+</ul>
+</section></section>
+<section>
+<section id="group-7-mental-health-and-drug-usage" class="title-slide slide level1 center" data-background-color="#f78fb3" data-background-opacity="70%">
+<h1>group 7: Mental Health and Drug Usage</h1>
+
+</section>
+<section id="introduction-motivation" class="slide level2">
+<h2>introduction &amp; motivation</h2>
+<p>Previous literature demonstrates that individuals suffering from mental health distress are at increased risk of developing a substance use disorder (SUD). Additionally, low socioeconomic status has been correlated with increased risk of developing SUD.</p>
+<p>We sought to characterize the extent to which socioeconomic status modulates risk of developing SUD in a cohort of individuals self-reporting increased mental health distress.</p>
+</section>
+<section id="section-46" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-2809014103.png" class="lightbox" data-gallery="quarto-lightbox-gallery-44"><img data-src="images/clipboard-2809014103.png"></a></p>
+</section>
+<section id="section-47" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-4292707956.png" class="lightbox" data-gallery="quarto-lightbox-gallery-45"><img data-src="images/clipboard-4292707956.png"></a></p>
+</section>
+<section id="section-48" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>df_final <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">agecat =</span> <span class="fu">factor</span>(<span class="fu">case_when</span>(age<span class="sc">==</span><span class="dv">1</span> <span class="sc">|</span> age<span class="sc">==</span><span class="dv">2</span> <span class="sc">|</span> age<span class="sc">==</span><span class="dv">3</span> <span class="sc">~</span> <span class="st">'Age 12-17'</span>,</span>
+<span id="cb4-3"><a href=""></a>                               age<span class="sc">==</span><span class="dv">4</span> <span class="sc">|</span> age<span class="sc">==</span><span class="dv">5</span> <span class="sc">|</span> age<span class="sc">==</span><span class="dv">6</span> <span class="sc">~</span> <span class="st">'Age 18-25'</span>,</span>
+<span id="cb4-4"><a href=""></a>                               age<span class="sc">==</span><span class="dv">7</span> <span class="sc">|</span> age<span class="sc">==</span><span class="dv">8</span> <span class="sc">~</span> <span class="st">'Age 26-35'</span>,</span>
+<span id="cb4-5"><a href=""></a>                               age<span class="sc">==</span><span class="dv">9</span> <span class="sc">~</span> <span class="st">'Age 35-49'</span>,</span>
+<span id="cb4-6"><a href=""></a>                               age<span class="sc">==</span><span class="dv">10</span> <span class="sc">~</span> <span class="st">'Age 50-64'</span>,</span>
+<span id="cb4-7"><a href=""></a>                               age<span class="sc">==</span><span class="dv">11</span> <span class="sc">~</span> <span class="st">'Age 65+'</span>),</span>
+<span id="cb4-8"><a href=""></a>                         <span class="at">levels=</span><span class="fu">c</span>(<span class="st">'Age 12-17'</span>,<span class="st">'Age 18-25'</span>,<span class="st">'Age 26-35'</span>,<span class="st">'Age 35-49'</span>,<span class="st">'Age 50-64'</span>,<span class="st">'Age 65+'</span>)))</span>
+<span id="cb4-9"><a href=""></a></span>
+<span id="cb4-10"><a href=""></a>df_final <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span></span>
+<span id="cb4-11"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">racecat =</span> <span class="fu">factor</span>(<span class="fu">case_when</span>(race_ethnicity<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="st">'NHW'</span>,</span>
+<span id="cb4-12"><a href=""></a>                             race_ethnicity<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="st">'NHB'</span>,</span>
+<span id="cb4-13"><a href=""></a>                             race_ethnicity<span class="sc">==</span><span class="dv">7</span> <span class="sc">~</span> <span class="st">'Hispanic'</span>,</span>
+<span id="cb4-14"><a href=""></a>                             race_ethnicity<span class="sc">==</span><span class="dv">3</span> <span class="sc">~</span> <span class="st">'AIAN'</span>,</span>
+<span id="cb4-15"><a href=""></a>                             race_ethnicity<span class="sc">==</span><span class="dv">4</span> <span class="sc">|</span> race_ethnicity<span class="sc">==</span><span class="dv">5</span> <span class="sc">~</span><span class="st">'NHAPI'</span>,</span>
+<span id="cb4-16"><a href=""></a>                             race_ethnicity<span class="sc">==</span><span class="dv">6</span> <span class="sc">~</span><span class="st">'More than one race'</span>),</span>
+<span id="cb4-17"><a href=""></a>                          <span class="at">levels=</span><span class="fu">c</span>(<span class="st">'NHW'</span>,<span class="st">'NHB'</span>,<span class="st">'Hispanic'</span>,<span class="st">'AIAN'</span>,<span class="st">'NHAPI'</span>,<span class="st">'More than one race'</span>)))</span>
+<span id="cb4-18"><a href=""></a></span>
+<span id="cb4-19"><a href=""></a>df_final <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span></span>
+<span id="cb4-20"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">urban =</span> <span class="fu">factor</span>(<span class="fu">case_when</span>(urban_Rural<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="st">'Large Metro Area'</span>,</span>
+<span id="cb4-21"><a href=""></a>                                  urban_Rural<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="st">'Small Metro Area'</span>,</span>
+<span id="cb4-22"><a href=""></a>                                  urban_Rural<span class="sc">==</span><span class="dv">3</span> <span class="sc">~</span> <span class="st">'Non-metropolitan'</span>),</span>
+<span id="cb4-23"><a href=""></a>                        <span class="at">levels=</span><span class="fu">c</span>(<span class="st">'Large Metro Area'</span>,<span class="st">'Small Metro Area'</span>,<span class="st">'Non-metropolitan'</span>)))</span>
+<span id="cb4-24"><a href=""></a></span>
+<span id="cb4-25"><a href=""></a>df_final <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span></span>
+<span id="cb4-26"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(<span class="fu">case_when</span>(sex_Gender<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="st">'Male'</span>,</span>
+<span id="cb4-27"><a href=""></a>                      sex_Gender<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="st">'Female'</span>)))</span>
+<span id="cb4-28"><a href=""></a>         </span>
+<span id="cb4-29"><a href=""></a>df_final <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span></span>
+<span id="cb4-30"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">educcat =</span> <span class="fu">factor</span>(<span class="fu">case_when</span>(education<span class="sc">==</span><span class="dv">1</span> <span class="sc">|</span> education<span class="sc">==</span><span class="dv">2</span> <span class="sc">|</span> education<span class="sc">==</span><span class="dv">3</span> <span class="sc">~</span> <span class="st">'Less than middle school'</span>,</span>
+<span id="cb4-31"><a href=""></a>                                    education<span class="sc">==</span><span class="dv">4</span> <span class="sc">|</span> education<span class="sc">==</span><span class="dv">5</span> <span class="sc">|</span> education<span class="sc">==</span><span class="dv">6</span> <span class="sc">|</span> education<span class="sc">==</span><span class="dv">7</span> <span class="sc">~</span> <span class="st">'Less than high school'</span>,</span>
+<span id="cb4-32"><a href=""></a>                                    education<span class="sc">==</span><span class="dv">8</span> <span class="sc">~</span> <span class="st">'High school or GED'</span>,</span>
+<span id="cb4-33"><a href=""></a>                                    education<span class="sc">==</span><span class="dv">9</span> <span class="sc">~</span> <span class="st">'Some college'</span>,</span>
+<span id="cb4-34"><a href=""></a>                                    education<span class="sc">==</span><span class="dv">10</span> <span class="sc">~</span> <span class="st">'Associates degree'</span>,</span>
+<span id="cb4-35"><a href=""></a>                                    education<span class="sc">==</span><span class="dv">11</span> <span class="sc">~</span> <span class="st">'College degree'</span>),</span>
+<span id="cb4-36"><a href=""></a>                          <span class="at">levels=</span><span class="fu">c</span>(<span class="st">'Less than middle school'</span>,<span class="st">'Less than high school'</span>,<span class="st">'High school or GED'</span>,</span>
+<span id="cb4-37"><a href=""></a>                                   <span class="st">'Some college'</span>,<span class="st">'Associates degree'</span>,<span class="st">'College degree'</span>)))</span>
+<span id="cb4-38"><a href=""></a></span>
+<span id="cb4-39"><a href=""></a>df_final <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span></span>
+<span id="cb4-40"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">inccat =</span> <span class="fu">factor</span>(<span class="fu">case_when</span>(family_income<span class="sc">==</span><span class="dv">1</span> <span class="sc">|</span> family_income<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="st">'Less than $20,000'</span>,</span>
+<span id="cb4-41"><a href=""></a>                                   family_income<span class="sc">==</span><span class="dv">3</span> <span class="sc">|</span> family_income<span class="sc">==</span><span class="dv">4</span> <span class="sc">|</span> family_income<span class="sc">==</span><span class="dv">5</span> <span class="sc">~</span> <span class="st">'$20,000-$49,999'</span>,</span>
+<span id="cb4-42"><a href=""></a>                                   family_income<span class="sc">==</span><span class="dv">6</span> <span class="sc">~</span> <span class="st">'$50,000-$74,999'</span>,</span>
+<span id="cb4-43"><a href=""></a>                                   family_income<span class="sc">==</span><span class="dv">7</span> <span class="sc">~</span> <span class="st">'More than $75,000'</span>),</span>
+<span id="cb4-44"><a href=""></a>                         <span class="at">levels=</span><span class="fu">c</span>(<span class="st">'Less than $20,000'</span>,<span class="st">'$20,000-$49,999'</span>,<span class="st">'$50,000-$74,999'</span>,<span class="st">'More than $75,000'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-49" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-1267933591.png" class="lightbox" data-gallery="quarto-lightbox-gallery-46"><img data-src="images/clipboard-1267933591.png"></a></p>
+</section>
+<section id="section-50" class="slide level2">
+<h2><img data-src="images/clipboard-4188828973.png"></h2>
+</section>
+<section id="section-51" class="slide level2">
+<h2><img data-src="images/clipboard-2955001827.png"></h2>
+</section>
+<section id="section-52" class="slide level2">
+<h2><img data-src="images/clipboard-1341733790.png"></h2>
+</section>
+<section id="section-53" class="slide level2">
+<h2></h2>
+<p><a href="images/clipboard-204223376.png" class="lightbox" data-gallery="quarto-lightbox-gallery-47"><img data-src="images/clipboard-204223376.png"></a></p>
+</section>
+<section id="section-54" class="slide level2">
+<h2><img data-src="images/clipboard-3313865299.png"></h2>
+</section>
+<section id="section-55" class="slide level2">
+<h2><img data-src="images/clipboard-2009805509.png"></h2>
+</section>
+<section id="section-56" class="slide level2">
+<h2><img data-src="images/clipboard-184787178.png"></h2>
+</section>
+<section id="section-57" class="slide level2">
+<h2><img data-src="images/clipboard-375163828.png"></h2>
+</section>
+<section id="section-58" class="slide level2">
+<h2><img data-src="images/clipboard-1586785019.png"></h2>
+</section>
+<section id="conclusions-2" class="slide level2">
+<h2>conclusions</h2>
+<blockquote>
+<p><em>In summary, in lower income households, mental health distress is more strongly associated with increased risk of substance use disorder.</em></p>
+</blockquote>
+</section>
+<section id="nice-file-structure" class="slide level2">
+<h2>nice file structure</h2>
+<p><a href="images/clipboard-1571905684.png" class="lightbox" data-gallery="quarto-lightbox-gallery-48"><img data-src="images/clipboard-1571905684.png"></a></p>
+</section>
+<section id="great-job-6" class="slide level2" data-background-color="#f78fb3" data-background-opacity="70%">
+<h2>great job!</h2>
+<ul>
+<li>Your plots are really clean!</li>
+<li>I think your group learned some really great lessons about how to recode variables given what the codebook says</li>
+<li>I especially love how you embedded important code excerpts in your markdown document.</li>
+<li>I feel we got to go through a great example of the debugging process figuring out that we needed to <code>ungroup()</code> because the data frame had been <code>rowwise()</code>d.</li>
+</ul>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -826,7 +1027,6 @@ As Categorical variables - MMSE score week 13: Improved, Not improved - MMSE sco
   <script src="final_projects_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="final_projects_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="final_projects_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="final_projects_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
   <script src="final_projects_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -843,13 +1043,11 @@ As Categorical variables - MMSE score week 13: Improved, Not improved - MMSE sco
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -1020,7 +1218,7 @@ As Categorical variables - MMSE score week 13: Improved, Not improved - MMSE sco
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -1091,9 +1289,23 @@ As Categorical variables - MMSE score week 13: Improved, Not improved - MMSE sco
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
       });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
       const clipboard = new window.ClipboardJS('.code-copy-button', {
-        target: function(trigger) {
-          return trigger.previousElementSibling;
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
         }
       });
       clipboard.on('success', function(e) {
@@ -1129,10 +1341,9 @@ As Categorical variables - MMSE score week 13: Improved, Not improved - MMSE sco
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1141,9 +1352,18 @@ As Categorical variables - MMSE score week 13: Improved, Not improved - MMSE sco
           },
           interactive: true,
           interactiveBorder: 10,
-          theme: 'quarto-reveal',
-          placement: 'bottom-start'
+          theme: 'light-border',
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1199,6 +1419,31 @@ As Categorical variables - MMSE score week 13: Improved, Not improved - MMSE sco
       }
     });
     </script>
+    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+    window.onload = () => {
+      lightboxQuarto.on('slide_before_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        const href = trigger.getAttribute('href');
+        if (href !== null) {
+          const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+          if (imgEl !== null) {
+            const srcAttr = imgEl.getAttribute("src");
+            if (srcAttr && srcAttr.startsWith("data:")) {
+              slideConfig.href = srcAttr;
+            }
+          }
+        } 
+      });
+
+      lightboxQuarto.on('slide_after_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(slideNode);
+        }
+      });
+
+    };
+              </script>
     
 
 </body></html>

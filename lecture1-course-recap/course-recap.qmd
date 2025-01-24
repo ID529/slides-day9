@@ -3,15 +3,13 @@ title: "ID529 Course Recap"
 format:
   revealjs:
     theme: [default, recap.scss]
-    background-image: "graphics/transition_slides/annie-spratt.jpg"
+    background-image: "https://github.com/ID529/lectures/blob/main/graphics/transition_slides/annie-spratt.jpg?raw=true"
     background-opacity: "60%"
     background-color: "pink"
 slide-number: true
 title-slide-attributes:
-  data-background-image: "graphics/transition_slides/annie-spratt.jpg"
+  data-background-image: "https://github.com/ID529/lectures/blob/main/graphics/transition_slides/annie-spratt.jpg?raw=true"
   data-background-color: "white"
-revealjs-plugins:
-  - pointer
 execute: 
   echo: true
 ---
